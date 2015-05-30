@@ -16,27 +16,28 @@
     <div class="col-sm-6 col-sm-offset-3">
       <div class="row">
       
-        <form class="panel panel-default" ng-submit="ctrl.submit()">
+        <form class="panel panel-default" ng-submit="candidateForm.$valid && ctrl.submit()" name="candidateForm">
             <div class="panel-body">
               Informe seu nome e e-mail nos respectivos campos abaixo. Após isso, informe o seu nível de conhecimento de 0 á 10 nos assuntos listados. Sendo 0 para sem conhecimento e 10 para especialista.
             </div>
             <div class="list-group">
               <div class="list-group-item">
                 <div class="row">
-                  <div class="form-group col-sm-6">
-                    <label for="candidate-name">Nome</label>
-                    <input type="text" class="form-control" id="candidate-name" placeholder="Digite seu nome" ng-model="ctrl.candidate.name">
+                  <div class="form-group col-sm-6" ng-class="{'has-error' : candidateForm.candidateName.$invalid && candidateForm.candidateName.$touched}">
+                    <label class="control-label required" for="candidate-name">Nome</label>
+                    <input type="text" class="form-control" id="candidateName" name="candidateName" placeholder="Digite seu nome" ng-model="ctrl.candidate.name" required>
                   </div>
-                  <div class="form-group col-sm-6">
-                    <label for="candidate-email">Email</label>
-                    <input type="email" class="form-control" id="candidate-email" placeholder="e seu email" ng-model="ctrl.candidate.email">
+                  <div class="form-group col-sm-6" ng-class="{'has-error' : candidateForm.candidateEmail.$invalid && candidateForm.candidateEmail.$touched}">
+                    <label class="control-label required" for="candidate-email">Email</label>
+                    <input type="email" class="form-control" id="candidateEmail" name="candidateEmail" placeholder="e seu email" ng-model="ctrl.candidate.email" required>
                   </div>
                 </div>
               </div>
 
               <div class="list-group-item" ng-repeat="(level, data) in ctrl.candidate.knowledges_attributes">
-                <div class="form-group">
-                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-{{level | lowercase}}" placeholder="{{data.item}}" ng-model="data.level">
+                <div class="form-group" ng-class="{'has-error' : candidateForm.candidateKnowledges{{data.item | trim}}.$invalid}">
+                  <input type="number" min="0" max="10" class="form-control" id="candidateKnowledges{{data.item | trim}}" name="candidateKnowledges{{data.item | trim}}" placeholder="{{data.item}}" ng-model="data.level" >
+                  <span class="help-block" ng-show="candidateForm.candidateKnowledges{{data.item | trim}}.$invalid">O valor informado deve ser um número entre 0 e 10.</span>
                 </div>
               </div>
             </div>
@@ -55,6 +56,7 @@
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/bootstrap-sweetalert/lib/sweet-alert.js"></script>
+  <script src="bower_components/nanobar/nanobar.js"></script>
   <!-- endbower -->
   <script type="text/javascript" src="javascripts/ucandidate-web.js"></script>
   <script type="text/javascript" src="javascripts/google.js"></script>

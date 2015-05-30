@@ -5,3 +5,9 @@
 body {
   padding-top: 10px;
 }
+label.control-label.required:before {
+  content: "* ";
+}
+.help-block{
+  margin-bottom: 0;
+}

@@ -19,6 +19,7 @@
     "bootstrap": "~3.3.4",
     "angular": "~1.4.0",
     "bootstrap-sweetalert": "~0.4.3",
-    "grunt": "~0.4.5"
+    "grunt": "~0.4.5",
+    "nanobar": "~0.2.0"
   }
 }
