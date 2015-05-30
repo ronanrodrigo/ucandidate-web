@@ -4,17 +4,18 @@ angular.module('ucandidate-web', [])
     self.candidate = {};
     self.candidate.knowledges_attributes = [{item: "HTML", level: null}, {item: "CSS", level: null}, {item: "JavaScript", level: null}, {item: "Python", level: null}, {item: "Django", level: null}, {item: "Desenvolvimento iOS", level: null}, {item: "Desenvolvimento Android", level: null}];
 
-    $http.get("https://ucandidate-api.herokuapp.com/api/authorization").then(function(response){
-      self.authenticity_token = response.data.authenticity_token
-    }, function(errResponse){
-      console.log("Erro ao conectar com a API")
-    })
-
     self.submit = function () {
-      console.log(self.candidate)
+
+      $http.post("http://localhost:3000/api/candidates", {"candidate" : self.candidate}).then(function(response){
+        console.log(response)
+      }, function(errResponse){
+        console.log("Erro ao comunicar com a API")
+      })
     }
   }])
   .config(['$httpProvider', function($httpProvider){
-    $httpProvider.defaults.headers.common["Content-Type"] = "application/json"
-    $httpProvider.defaults.headers.common["Accept"] = "application/vnd.ucandidate.v1"
+    $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
+    $httpProvider.defaults.headers.post["Content-Type"] = "application/json";
+    $httpProvider.defaults.headers.common["Accept"] = "application/vnd.ucandidate.v1";
+    $httpProvider.defaults.headers.post["Accept"] = "application/vnd.ucandidate.v1";
   }]);
