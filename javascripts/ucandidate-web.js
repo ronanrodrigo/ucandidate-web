@@ -6,7 +6,7 @@ angular.module('ucandidate-web', [])
 
     self.submit = function () {
 
-      $http.post("http://localhost:3000/api/candidates", {"candidate" : self.candidate}).then(function(response){
+      $http.post("http://ucandidate-api.herokuapp.com/:3000/api/candidates", {"candidate" : self.candidate}).then(function(response){
         console.log(response)
       }, function(errResponse){
         console.log("Erro ao comunicar com a API")
