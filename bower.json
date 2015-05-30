@@ -1,0 +1,22 @@
+{
+  "name": "uCandidate",
+  "version": "0.0.0",
+  "homepage": "http://ronanrodrigo.github.io/ucandidate-web",
+  "authors": [
+    "Ronan Rodrigo Nunes <ronan.nunes@me.com>"
+  ],
+  "description": "uCandidate - Web Client",
+  "main": "stylesheets/main.css",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "angular": "~1.4.0"
+  }
+}
