@@ -1,47 +1,91 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="pt-BR" ng-app="ucandidate-web">
 <head>
   <meta charset="UTF-8">
   <title>uCandidate by ronanrodrigo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  <!-- bower:css -->
+  <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.css' />
+  <!-- endbower -->
+  <link rel='stylesheet' href='stylesheets/ucandidate-web.css' />
 </head>
 <body>
-  <section class="page-header">
-    <h1 class="project-name">uCandidate</h1>
-    <h2 class="project-tagline">Web Client</h2>
-    <a href="https://github.com/ronanrodrigo/ucandidate-web" class="btn">View on GitHub</a>
-    <a href="https://github.com/ronanrodrigo/ucandidate-web/zipball/master" class="btn">Download .zip</a>
-    <a href="https://github.com/ronanrodrigo/ucandidate-web/tarball/master" class="btn">Download .tar.gz</a>
-  </section>
+  <div class="container-fluid" ng-controller="CandidateCtrl as ctrl">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="row">
+      
+        <form class="panel panel-default">
+            <div class="panel-body">
+              Informe seu nome e e-mail nos respectivos campos abaixo. Após isso, informe o seu nível de conhecimento de 0 á 10 nos assuntos listados. Sendo 0 para sem conhecimento e 10 para especialista.
+            </div>
+            <div class="list-group">
+              <div class="list-group-item">
+                <div class="row">
+                  <div class="form-group col-sm-6">
+                    <label for="candidate-name">Nome</label>
+                    <input type="text" class="form-control" id="candidate-name" placeholder="Digite seu nome">
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <label for="candidate-email">Email</label>
+                    <input type="email" class="form-control" id="candidate-email" placeholder="e seu email">
+                  </div>
+                </div>
+              </div>
 
-  <section class="main-content">
-    <h3><a id="lorem-ipsum-minim-excepteur-ut" class="anchor" href="#lorem-ipsum-minim-excepteur-ut" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lorem ipsum Minim Excepteur Ut</h3>
+              <div class="list-group-item">
+                <div class="form-group">
+                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-html" placeholder="HTML">
+                </div>
+              </div>
+              <div class="list-group-item">
+                <div class="form-group">
+                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-css" placeholder="CSS">
+                </div>
+              </div>
+              <div class="list-group-item">
+                <div class="form-group">
+                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-javascript" placeholder="JavaScript">
+                </div>
+              </div>
+              <div class="list-group-item">
+                <div class="form-group">
+                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-python" placeholder="Python">
+                </div>
+              </div>
+              <div class="list-group-item">
+                <div class="form-group">
+                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-django" placeholder="Django">
+                </div>
+              </div>
+              <div class="list-group-item">
+                <div class="form-group">
+                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-ios" placeholder="Desenvolvimento iOS">
+                </div>
+              </div>
+              <div class="list-group-item">
+                <div class="form-group">
+                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-android" placeholder="Desenvolvimento Android">
+                </div>
+              </div>
+            </div>
 
-    <p>Lorem ipsum Excepteur ullamco id qui adipisicing aliquip eu enim nostrud dolore non veniam dolor id cupidatat Excepteur irure culpa aute dolor aliqua in sunt laborum aute exercitation Ut incididunt.</p>
-  </section>
+            <div class="panel-footer">
+              <button class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
 
-  <section class="main-content">
-    <footer class="site-footer">
-      <span class="site-footer-owner"><a href="https://github.com/ronanrodrigo/ucandidate-web">uCandidate</a> is maintained by <a href="https://github.com/ronanrodrigo">ronanrodrigo</a>.</span>
-      <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-    </footer>
-  </section>
-  
-  <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-    try {
-      var pageTracker = _gat._getTracker("UA-63576323-1");
-      pageTracker._trackPageview();
-    } catch(err) {}
-  </script>
+      </div>
+    </div>
+  </div>
 
-  </body>
-  </html>
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <!-- endbower -->
+  <script type="text/javascript" src="javascripts/ucandidate-web.js"></script>
+  <script type="text/javascript" src="javascripts/google.js"></script>
+</body>
+</html>
 
