@@ -33,39 +33,9 @@
                 </div>
               </div>
 
-              <div class="list-group-item">
+              <div class="list-group-item" ng-repeat="knowledge in ctrl.knowledgesItems">
                 <div class="form-group">
-                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-html" placeholder="HTML">
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="form-group">
-                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-css" placeholder="CSS">
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="form-group">
-                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-javascript" placeholder="JavaScript">
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="form-group">
-                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-python" placeholder="Python">
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="form-group">
-                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-django" placeholder="Django">
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="form-group">
-                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-ios" placeholder="Desenvolvimento iOS">
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="form-group">
-                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-android" placeholder="Desenvolvimento Android">
+                  <input type="number" min="0" max="10" class="form-control" id="candidate-knowledges-{{knowledge | lowercase}}" placeholder="{{knowledge}}">
                 </div>
               </div>
             </div>
