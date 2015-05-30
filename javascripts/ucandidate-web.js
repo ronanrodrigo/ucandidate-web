@@ -7,7 +7,9 @@ angular.module('ucandidate-web', [])
     self.submit = function () {
 
       $http.post("http://ucandidate-api.herokuapp.com/api/candidates", {"candidate" : self.candidate}).then(function(response){
-        console.log(response)
+        self.candidate = {};
+        self.candidate.knowledges_attributes = [{item: "HTML", level: null}, {item: "CSS", level: null}, {item: "JavaScript", level: null}, {item: "Python", level: null}, {item: "Django", level: null}, {item: "Desenvolvimento iOS", level: null}, {item: "Desenvolvimento Android", level: null}];
+        swal("Informaçoes recebidas!", "Em breve você receberá um e-mail sobre nossas vagas.", "success")
       }, function(errResponse){
         console.log("Erro ao comunicar com a API")
       })
