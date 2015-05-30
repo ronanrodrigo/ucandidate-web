@@ -15,7 +15,7 @@
     <div class="col-sm-6 col-sm-offset-3">
       <div class="row">
       
-        <form class="panel panel-default">
+        <form class="panel panel-default" ng-submit="ctrl.submit()">
             <div class="panel-body">
               Informe seu nome e e-mail nos respectivos campos abaixo. Após isso, informe o seu nível de conhecimento de 0 á 10 nos assuntos listados. Sendo 0 para sem conhecimento e 10 para especialista.
             </div>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="panel-footer">
-              <button class="btn btn-primary">Enviar</button>
+              <input type="submit" class="btn btn-primary" value="Enviar">
             </div>
         </form>
 
